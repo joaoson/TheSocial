@@ -4,7 +4,7 @@
     $email = $_POST["emailLogin"];
     $password = $_POST["passwordLogin"];
 
-    $sql = "SELECT id_user, email, password FROM user WHERE email = '$email'";
+    $sql = "SELECT id_user, email, password FROM User WHERE email = '$email'";
     $result = $connection->query($sql);
 
     if ($result->num_rows > 0) {

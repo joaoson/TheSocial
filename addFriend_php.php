@@ -9,7 +9,7 @@
     error_reporting(-1);
     $idFriend = htmlspecialchars($_GET["idFriend"]);
 
-    $sql = "INSERT into friends(fk_User_id_user,fk_User_id_userFriend) values ($id,$idFriend);";
+    $sql = "INSERT into Friends(fk_User_id_user,fk_User_id_userFriend) values ($id,$idFriend);";
 
     if(mysqli_query($connection, $sql)) {
         echo 'Success!';

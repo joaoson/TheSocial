@@ -1,8 +1,8 @@
 <?php
-    $dbServerName = '127.0.0.1:3306';
-    $dbUserName = 'root';
-    $dbPassword = 'PUC@2023';
-    $dbName = 'TheSocial';
+    $dbServerName = 'sql10.freesqldatabase.com';
+    $dbUserName = 'sql10663447';
+    $dbPassword = 'uiiCfJ9Ens';
+    $dbName = 'sql10663447';
 
     $connection = new mysqli($dbServerName, $dbUserName, $dbPassword, $dbName);
     if($connection->connect_error) {

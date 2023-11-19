@@ -14,11 +14,11 @@
     $date = mysqli_real_escape_string($connection, $_POST['date']);
     $gender = mysqli_real_escape_string($connection, $_POST['gender']);
 
-    $sql = "INSERT INTO user (name, email, password, dateOfBirth, gender) VALUES ('$name','$email','$password', '$date','$gender')";
+    $sql = "INSERT INTO User (name, email, password, dateOfBirth, gender) VALUES ('$name','$email','$password', '$date','$gender')";
 
     if(mysqli_query($connection, $sql)) {
         echo 'Success!';
-        $sql2 = "SELECT * FROM user WHERE email ='". $email . "';";
+        $sql2 = "SELECT * FROM User WHERE email ='". $email . "';";
         $result2 = mysqli_query($connection, $sql2);
         $row2 = mysqli_fetch_assoc($result2);
         session_start();

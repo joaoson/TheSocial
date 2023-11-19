@@ -57,7 +57,7 @@
             <div class="results">
 
             <?php
-                $sql = "SELECT DISTINCT post.content,post.timePosted, friends.fk_User_id_userFriend as Autor FROM post INNER JOIN friends on (post.fk_User_id_user = friends.fk_User_id_userFriend) INNER JOIN  user on (friends.fk_User_id_user = '". $id . "') ORDER BY timePosted ASC;";
+                $sql = "SELECT DISTINCT Post.content, Post.timePosted, Friends.fk_User_id_userFriend as Autor FROM Post INNER JOIN Friends on (Post.fk_User_id_user = Friends.fk_User_id_userFriend) INNER JOIN  User on (Friends.fk_User_id_user = '". $id . "') ORDER BY timePosted ASC;";
                 $result = $connection->query($sql);
 
                 if ($result->num_rows > 0) {
@@ -83,7 +83,7 @@
         <section id="profileInfo">
         <div class="information">
             <?php
-            $sql3 = "SELECT * FROM user WHERE id_user ='". $id . "';";
+            $sql3 = "SELECT * FROM User WHERE id_user ='". $id . "';";
             $result3 = mysqli_query($connection, $sql3);
             $row3 = mysqli_fetch_assoc($result3);
 ?>
