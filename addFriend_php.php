@@ -8,7 +8,6 @@
     ini_set('display_errors', 1);
     error_reporting(-1);
     $idFriend = htmlspecialchars($_GET["idFriend"]);
-    echo $idFriend;
 
     $sql = "INSERT into friends(fk_User_id_user,fk_User_id_userFriend) values ($id,$idFriend);";
 

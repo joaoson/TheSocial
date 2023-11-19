@@ -6,6 +6,25 @@
     }
     $id = $_SESSION["id"];
     include("connection.php");
+
+    $sql5 = "SELECT DISTINCT u.id_user, u.name, COUNT(*) as contagem
+    FROM User AS u
+    INNER JOIN Friends AS f ON u.id_user = f.fk_User_id_user
+    WHERE f.fk_User_id_userFriend ='". $id . "'
+    GROUP BY u.name;";
+    $result5 = mysqli_query($connection, $sql5);
+    $row5 = mysqli_fetch_assoc($result5);
+
+    $sql6 = "SELECT DISTINCT u.id_user, u.name, COUNT(*) as contagem
+        FROM User AS u
+        INNER JOIN Friends AS f ON u.id_user = f.fk_User_id_userFriend
+        WHERE f.fk_User_id_user = '". $id . "'
+        GROUP BY u.name;";
+
+    $result6 = mysqli_query($connection, $sql6);
+    $row6 = mysqli_fetch_assoc($result6);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,19 +44,16 @@
             <div class="results">
 
             <?php
-                $sql = "SELECT DISTINCT post.content,post.timePosted, friends.fk_User_id_userFriend as Autor FROM post INNER JOIN friends on (post.fk_User_id_user = friends.fk_User_id_userFriend) INNER JOIN  user on (friends.fk_User_id_user = '". $id . "') ORDER BY timePosted ASC;";
+                $sql = "SELECT DISTINCT post.content,post.timePosted, user.name as Autor FROM post INNER JOIN user on (post.fk_User_id_user = user.id_user) WHERE user.id_user = '". $id . "' ORDER BY timePosted ASC;";
                 $result = $connection->query($sql);
 
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         $author = $row["Autor"];
-                        $sql2 = "SELECT id_user, name FROM User WHERE id_user = '$author'";
-                        $result2 = $connection->query($sql2);
-                        $row2 = $result2->fetch_assoc();
                         ?>
                             <div class="post">
                                 <div class="postHeader">
-                                    <h2><?php echo $row2["name"]?></h2>
+                                    <h2><?php echo $row["Autor"]?></h2>
                                     <h3><?php echo $row["timePosted"]?></h3>
                                 </div>
                                 <h2><?php echo $row["content"]?></h2>
@@ -71,11 +87,11 @@
                 </div>
                 <div>
                     <a href=""><button>Write Post</button></a>
-                    <a href="myFeed.php"><button>View My Posts</button></a>
+                    <a href="homepage.php"><button>View My Feed</button></a>
                 </div>
                 <div>
-                    <a href=""><button>View My Followers</button></a>
-                    <a href=""><button>View Following</button></a>
+                    <a href=""><button>View My Followers : <?php echo $row5["contagem"]?></button></a>
+                    <a href=""><button>View Following : <?php echo $row6["contagem"]?></button></a>
                 </div>
             </div>
         </div>
