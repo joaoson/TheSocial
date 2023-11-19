@@ -31,7 +31,7 @@
         $result6 = mysqli_query($connection, $sql6);
 
     if($result6->num_rows > 0){
-        $row6 = mysqli_fetch_assoc($result5);
+        $row6 = mysqli_fetch_assoc($result6);
         $resultado2 = $row6["contagem"];
     }else{
         $resultado2 = 0;
@@ -103,7 +103,7 @@
                     <a href="./removeUser.php"><button>Remove Account</button></a>
                 </div>
                 <div>
-                    <a href=""><button>Write Post</button></a>
+                    <a href="writePost.php"><button>Write Post</button></a>
                     <a href="myFeed.php"><button>View My Posts</button></a>
                 </div>
                 <div>

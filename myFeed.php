@@ -14,7 +14,7 @@
     GROUP BY f.fk_User_id_userFriend;";
     $result5 = mysqli_query($connection, $sql5);
     if($result5->num_rows > 0){
-        $row5 = mysqli_fetch_assoc($result5);
+        $row5 = mysqli_fetch_assoc($result6);
         $resultado1 = $row5["contagem"];
     }else{
         $resultado1 = 0;
@@ -101,7 +101,7 @@
                     <a href="./removeUser.php"><button>Remove Account</button></a>
                 </div>
                 <div>
-                    <a href=""><button>Write Post</button></a>
+                    <a href="writePost.php"><button>Write Post</button></a>
                     <a href="homepage.php"><button>View My Feed</button></a>
                 </div>
                 <div>

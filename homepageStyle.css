@@ -191,3 +191,7 @@ main{
   .hidden {
     display: none;
   }
+
+  #writeForm, .textarea{
+    z-index: 4;
+}
