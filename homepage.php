@@ -31,8 +31,8 @@
 
 
     if($result->num_rows > 0){
-        $row5 = mysqli_fetch_assoc($result5);
-        $resultado2 = $row5["contagem"];
+        $row6 = mysqli_fetch_assoc($result5);
+        $resultado2 = $row6["contagem"];
     }else{
         $resultado2 = 0;
     }
