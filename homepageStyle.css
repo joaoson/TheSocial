@@ -1,0 +1,94 @@
+@font-face {
+    font-family: Ubuntu;
+    src: url(./fonts/Ubuntu-Regular.ttf);
+}
+
+main, body, *{
+    font-family: "Ubuntu";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 10vh;
+    color: white;
+    position: fixed;
+    background-color: #3D5A80;
+}
+main{
+    position: absolute;
+    top: 10%;
+    padding-top: 2rem;
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+#feed{
+    text-align: left;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: -1 ;
+}
+
+.results{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+    row-gap: 2rem;
+    margin-top: 2rem;
+}
+
+.post{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    row-gap: 1rem;
+    background-color: #E0FBFC;
+    padding: 1rem;
+}
+
+.postHeader{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #98C1D9;
+    padding: 1rem;
+}
+
+#profileInfo{
+    width: 40%;
+    position: fixed;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.information{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2rem;
+    font-size: 1.4rem;
+}

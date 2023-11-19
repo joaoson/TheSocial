@@ -1,0 +1,199 @@
+@font-face {
+    font-family: Ubuntu;
+    src: url(./fonts/Ubuntu-Regular.ttf);
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+}
+
+html, body, *{
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Ubuntu";
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#formContainer{
+    width: 60%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-shadow: 0px 0px 46px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 46px 3px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 46px 3px rgba(0,0,0,0.75);
+    border-radius: 1rem;
+}
+
+#formNav{
+    display: flex;
+    flex-direction: column;
+    background-position: center;
+    background-image: url(./sidebar.svg);
+    background-size: cover;
+    width: 35%;
+    background-repeat: no-repeat;
+    margin-left: 1rem;
+    height: 93%;
+    border-radius: 1rem;
+}
+
+#formulario{
+    width: 60%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #483eff;
+}
+
+.infoInputs{
+    width: 100%;
+    flex-grow: 0;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: 1000ms all ease-in-out;
+}
+.infoInputs button{
+    background-color: #483eff;
+    margin-right: 5%;
+    align-self: flex-end;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.infoInputs h2{
+    color: #483eff;
+}
+.infoInputs h3{
+    color: #9e9e9e;
+}
+.input{
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+}
+
+.input input{
+    width: 100%;
+}
+.input label{
+    color: #483eff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.5rem 0;
+}
+
+.inputs{
+    height: 45%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.numero{
+    padding-left: 2%;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-left: 5%;
+}
+
+.information{
+    margin-left: 5%;
+    color: #CCC;
+    font-size: 0.7rem;
+}
+
+span{
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    border: #ccc 2px solid;
+    color: #CCC;
+    font-weight: bold;
+    transition: 1000ms all ease-in-out;
+}
+
+input{
+    padding: 1rem;
+    border-radius: 0.4rem;
+    border: 3px transparent solid;
+    border: 1px #9e9e9e solid;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+::placeholder {
+    color: #9e9e9e;
+    opacity: 1; /* Firefox */
+  }
+  
+  ::-ms-input-placeholder { /* Edge 12 -18 */
+    color: #9e9e9e;
+  }
+
+.error{
+    border: rgb(180, 10, 10) 3px solid;
+}
+
+.caption{
+    text-transform: uppercase;
+}
+
+.active{
+    border: #ccc 2px solid;
+    background-color: #CCC;
+    color: #483eff;
+}
+
+.header{
+    width: 80%;
+}
+
+.missing{
+    opacity: 0;
+    height: 0%;
+}
+
+.desativado{
+    cursor: not-allowed;
+    background-color: gray !important;
+}
+
+.imagem{
+    height: 300px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
