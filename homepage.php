@@ -6,6 +6,25 @@
     }
     $id = $_SESSION["id"];
     include("connection.php");
+
+    
+    $sql5 = "SELECT DISTINCT u.id_user, u.name, COUNT(*) as contagem
+    FROM User AS u
+    INNER JOIN Friends AS f ON u.id_user = f.fk_User_id_user
+    WHERE f.fk_User_id_userFriend ='". $id . "'
+    GROUP BY f.fk_User_id_userFriend;";
+    $result5 = mysqli_query($connection, $sql5);
+    $row5 = mysqli_fetch_assoc($result5);
+
+    $sql6 = "SELECT DISTINCT u.id_user, u.name, COUNT(*) as contagem
+        FROM User AS u
+        INNER JOIN Friends AS f ON u.id_user = f.fk_User_id_userFriend
+        WHERE f.fk_User_id_user = '". $id . "'
+        GROUP BY f.fk_User_id_user;";
+
+    $result6 = mysqli_query($connection, $sql6);
+    $row6 = mysqli_fetch_assoc($result6);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,9 +73,10 @@
             $sql3 = "SELECT * FROM user WHERE id_user ='". $id . "';";
             $result3 = mysqli_query($connection, $sql3);
             $row3 = mysqli_fetch_assoc($result3);
-
-
 ?>
+
+
+
             <h1><?php echo $row3['name'];?></h1>
 
             <?php
@@ -74,8 +94,8 @@
                     <a href="myFeed.php"><button>View My Posts</button></a>
                 </div>
                 <div>
-                    <a href=""><button>View My Followers</button></a>
-                    <a href=""><button>View Following</button></a>
+                    <a href="viewFollower.php"><button>View My Followers : <?php echo $row5["contagem"]?></button></a>
+                    <a href="viewFollowing.php"><button>View Following : <?php echo $row6["contagem"]?></button></a>
                 </div>
             </div>
         </div>
