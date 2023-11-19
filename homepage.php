@@ -14,7 +14,14 @@
     WHERE f.fk_User_id_userFriend ='". $id . "'
     GROUP BY f.fk_User_id_userFriend;";
     $result5 = mysqli_query($connection, $sql5);
-    $row5 = mysqli_fetch_assoc($result5);
+    if($result->num_rows > 0){
+        $row5 = mysqli_fetch_assoc($result5);
+        $resultado1 = $row5["contagem"];
+    }else{
+        $resultado1 = 0;
+    }
+
+
 
     $sql6 = "SELECT DISTINCT u.id_user, u.name, COUNT(*) as contagem
         FROM User AS u
@@ -22,8 +29,14 @@
         WHERE f.fk_User_id_user = '". $id . "'
         GROUP BY f.fk_User_id_user;";
 
-    $result6 = mysqli_query($connection, $sql6);
-    $row6 = mysqli_fetch_assoc($result6);
+
+    if($result->num_rows > 0){
+        $row5 = mysqli_fetch_assoc($result5);
+        $resultado2 = $row5["contagem"];
+    }else{
+        $resultado2 = 0;
+    }
+    
 
 ?>
 <!DOCTYPE html>
@@ -94,8 +107,8 @@
                     <a href="myFeed.php"><button>View My Posts</button></a>
                 </div>
                 <div>
-                    <a href="viewFollower.php"><button>View My Followers : <?php echo $row5["contagem"]?></button></a>
-                    <a href="viewFollowing.php"><button>View Following : <?php echo $row6["contagem"]?></button></a>
+                    <a href="viewFollower.php"><button>View My Followers : <?php echo $resultado1?></button></a>
+                    <a href="viewFollowing.php"><button>View Following : <?php echo $resultado2?></button></a>
                 </div>
             </div>
         </div>

@@ -24,11 +24,11 @@
             <h3>Share all your thoughts on the latest news.</h3>
             <img src="./social-network-connecting-people-line-icon_116137-6483.avif" alt="">
         </section>
-        <section>
-            <div>
+        <section id="rightPanel">
+            <div class="forms">
                 <h2>Sign up</h2>
                 <h3>Quick and easy setup to get started</h3>
-                <form action="signup_php.php" method="post">
+                <form id="form" action="signup_php.php" method="post">
                     <div>
                         <label for="name">Full Name:</label>
                         <input name="name" id="name" type="text">

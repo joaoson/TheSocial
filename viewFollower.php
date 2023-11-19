@@ -91,8 +91,8 @@
                     <a href="myFeed.php"><button>View My Posts</button></a>
                 </div>
                 <div>
-                    <a href=""><button>View My Followers : <?php echo $row5["contagem"]?></button></a>
-                    <a href=""><button>View Following : <?php echo $row6["contagem"]?></button></a>
+                    <a href="viewFollower.php"><button>View My Followers : <?php echo $row5["contagem"]?></button></a>
+                    <a href="viewFollowing.php"><button>View Following : <?php echo $row6["contagem"]?></button></a>
                 </div>
             </div>
         </div>
