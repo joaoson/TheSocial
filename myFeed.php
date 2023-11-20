@@ -46,7 +46,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="homepageStyle.css">
+    <link rel="stylesheet" href="homepageStyle2.css">
     <title>TheSocial</title>
 </head>
 <body>
@@ -59,7 +59,7 @@
             <div class="results">
 
             <?php
-                $sql = "SELECT DISTINCT Post.content,Post.timePosted, User.name as Autor FROM Post INNER JOIN User on (Post.fk_User_id_user = User.id_user) WHERE User.id_user = '". $id . "' ORDER BY timePosted ASC;";
+                $sql = "SELECT DISTINCT Post.id_post,Post.content,Post.timePosted, User.name as Autor FROM Post INNER JOIN User on (Post.fk_User_id_user = User.id_user) WHERE User.id_user = '". $id . "' ORDER BY timePosted ASC;";
                 $result = $connection->query($sql);
 
                 if ($result->num_rows > 0) {
@@ -72,6 +72,10 @@
                                     <h3><?php echo $row["timePosted"]?></h3>
                                 </div>
                                 <h2><?php echo $row["content"]?></h2>
+                                <div class="buttonsPost">
+                                    <a href="editPost.php?idPost=<?php echo $row["id_post"]?>"><button>Edit</button></a>
+                                    <a href="deletePost.php?idPost=<?php echo $row["id_post"]?>"><button>Delete</button></a>
+                                </div>
                             </div>
                         <?php
                     }
