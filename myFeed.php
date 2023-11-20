@@ -14,7 +14,7 @@
     GROUP BY f.fk_User_id_userFriend;";
     $result5 = mysqli_query($connection, $sql5);
     if($result5->num_rows > 0){
-        $row5 = mysqli_fetch_assoc($result6);
+        $row5 = mysqli_fetch_assoc($result5);
         $resultado1 = $row5["contagem"];
     }else{
         $resultado1 = 0;
@@ -30,7 +30,7 @@
         $result6 = mysqli_query($connection, $sql6);
 
     if($result6->num_rows > 0){
-        $row6 = mysqli_fetch_assoc($result5);
+        $row6 = mysqli_fetch_assoc($result6);
         $resultado2 = $row6["contagem"];
     }else{
         $resultado2 = 0;

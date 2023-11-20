@@ -15,7 +15,7 @@
     GROUP BY f.fk_User_id_userFriend;";
     $result5 = mysqli_query($connection, $sql5);
     if($result5->num_rows > 0){
-        $row5 = mysqli_fetch_assoc($result6);
+        $row5 = mysqli_fetch_assoc($result5);
         $resultado1 = $row5["contagem"];
     }else{
         $resultado1 = 0;
@@ -28,7 +28,7 @@
         INNER JOIN Friends AS f ON u.id_user = f.fk_User_id_userFriend
         WHERE f.fk_User_id_user = '". $id . "'
         GROUP BY f.fk_User_id_user;";
-        $result6 = mysqli_query($connection, $sql6);
+    $result6 = mysqli_query($connection, $sql6);
 
     if($result6->num_rows > 0){
         $row6 = mysqli_fetch_assoc($result6);
